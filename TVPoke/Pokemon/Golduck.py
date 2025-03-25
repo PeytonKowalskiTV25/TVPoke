@@ -1,5 +1,5 @@
-from BaseClasses.PokeTypes import Water
-from BaseClasses.Move import Move
+from TVPoke.BaseClasses.PokeTypes import Water
+from TVPoke.BaseClasses.Move import Move
 
 class Golduck(Water):
     def __init__(self):
@@ -9,4 +9,4 @@ class Golduck(Water):
             Move("Surf", "WATER", 80),
             Move("Splash", "WATER", 0)
         ]
-        super().__init__("Golduck", 80, moves, "./imgs/Golduck.png")
+        super().__init__("Golduck", 80, moves, "./TVPoke/Pokemon/imgs/Golduck.png")

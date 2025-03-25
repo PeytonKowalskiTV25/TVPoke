@@ -5,5 +5,10 @@ def getAllPokemonNames():
     names = []
     for (dirpath, dirnames, filenames) in walk('./TVPoke/Pokemon'):
         names.extend(filenames)
-        break
-    return [name[:-3] for name in names]
+    ret = []
+    for name in names:
+        if name[-3:] == ".py":
+            ret.append(name[:-3])
+        else:
+            break
+    return ret

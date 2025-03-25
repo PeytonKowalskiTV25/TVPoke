@@ -1,4 +1,4 @@
-from TVPoke.BaseClasses.PokeParentClass import Pokemon
+from TVPoke.BaseClasses.Trainer import Pokemon
 
 class Water(Pokemon):
     def __init__(self, name, hp, moves, imgPath):
