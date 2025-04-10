@@ -10,3 +10,4 @@ class Kangaskhan(Normal):
             Move("Power up Punch", "FIGHTING", 40)
         ]
         super().__init__("Kangaskhan", 140, moves, "./TVPoke/Pokemon/imgs/Kangaskhan.png")
+    
