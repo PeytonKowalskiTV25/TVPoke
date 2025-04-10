@@ -9,5 +9,14 @@ class Kangaskhan(Normal):
             Move("Crunch", "DARK", 80),
             Move("Power up Punch", "FIGHTING", 40)
         ]
+        self.stats = {
+        "healthPoints" : 105,
+        "attack" : 95,
+        "defense" : 80,
+        "specialAttack" : 40,
+        "specialDefense" : 80,
+        "speed" :90
+        }
+        
         super().__init__("Kangaskhan", 140, moves, "./TVPoke/Pokemon/imgs/Kangaskhan.png")
     
