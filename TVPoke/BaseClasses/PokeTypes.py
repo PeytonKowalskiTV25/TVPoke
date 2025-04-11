@@ -26,6 +26,9 @@ class Normal(Pokemon):
 
 class Psychic(Pokemon):
     def __init__(self, name, hp, moves, imgPath):
-        super().__init__(name, hp, "PSYCHIC", "BUG", moves, imgPath)
+        super().__init__(name, hp, "PSYCHIC", "DARK", moves, imgPath)
 
-        
+
+class Flying(Pokemon):
+    def __init__(self, name, hp, moves, imgPath):
+        super().__init__(name, hp, "FLYING", "ELECTRIC", moves, imgPath)
