@@ -16,8 +16,14 @@ class Pokemon:
         "speed" : None
         }
 
-    def takeDamage(self, move):
+    def takeDamage(self, move, attacker):
+        totalDamage = 0
         multi = 1
         if move.type == self.critType:
             multi = 2
-        self.hp -= move.damage * multi
+        
+        attack = attacker.stats["attack"] * attacker.statBuffs["attack"]
+        defense = self.stats["defense"] * self.statBuffs["defense"]
+        totalDamage = (((2 * 100 / 5 + 2) * move.power * (attack / defense)) / 50 + 2) * multi
+
+        self.hp -= totalDamage
