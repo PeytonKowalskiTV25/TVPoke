@@ -7,6 +7,15 @@ class Pokemon:
         self.moves = moves
         self.img = imgPath
 
+        self.stats = {
+        "healthPoints" : None,
+        "attack" : None,
+        "defense" : None,
+        "specialAttack" : None,
+        "specialDefense" : None,
+        "speed" : None
+        }
+
     def takeDamage(self, move):
         multi = 1
         if move.type == self.critType:

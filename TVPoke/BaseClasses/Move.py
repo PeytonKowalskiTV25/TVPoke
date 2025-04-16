@@ -1,5 +1,6 @@
 class Move:
-    def __init__(self, name, type, damage):
+    def __init__(self, name, type, power, damageCategory):
         self.name = name
         self.type = type
-        self.damage = damage
+        self.power = power
+        self.damageCategory = damageCategory
