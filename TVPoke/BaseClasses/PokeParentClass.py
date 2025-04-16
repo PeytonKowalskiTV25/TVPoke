@@ -24,6 +24,6 @@ class Pokemon:
         
         attack = attacker.stats["attack"] * attacker.statBuffs["attack"]
         defense = self.stats["defense"] * self.statBuffs["defense"]
-        totalDamage = (((2 * 100 / 5 + 2) * move.power * (attack / defense)) / 50 + 2) * multi
+        totalDamage = ((0.5 * move.power * ((attack)/(defense))) + 1) * multi
 
         self.hp -= totalDamage
