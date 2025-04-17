@@ -22,8 +22,13 @@ class Pokemon:
         if move.type == self.critType:
             multi = 2
         
-        attack = attacker.stats["attack"] * attacker.statBuffs["attack"]
-        defense = self.stats["defense"] * self.statBuffs["defense"]
+        if move.damageCategory == "physical":
+            attack = attacker.stats["attack"] * attacker.statBuffs["attack"]
+            defense = self.stats["defense"] * self.statBuffs["defense"]
+        else:
+            attack = attacker.stats["specialAttack"] * attacker.statBuffs["specialAttack"]
+            defense = self.stats["specialDefense"] * self.statBuffs["specialDefense"]
+
         totalDamage = ((0.5 * move.power * ((attack)/(defense))) + 1) * multi
 
         self.hp -= totalDamage
