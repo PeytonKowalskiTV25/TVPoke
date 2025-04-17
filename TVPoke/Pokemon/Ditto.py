@@ -9,4 +9,4 @@ class Ditto(Normal):
             Move("Body Slam", "NORMAL", 85),   
             Move("Double-Edge", "NORMAL", 120),     
         ]
-        super().__init__("ditto", 48, moves, "./TVPoke/Pokemon/imgs/ditto.webp")
+        super().__init__("ditto", 48, moves, "./TVPoke/Pokemon/imgs/ditto.png")
