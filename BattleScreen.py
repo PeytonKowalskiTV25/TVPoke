@@ -26,11 +26,6 @@ class BattleScreen(Screen):
 
         for trainer in self.trainers:
             self.elements.extend(trainer.getElements())
-
-        if self.activeTrainer == self.trainers[0]:
-            self.activeTrainer = self.trainers[1]
-        else:
-            self.activeTrainer = self.trainers[0]
         
         self.activePokemon = self.activeTrainer.pokemon[0]
         
@@ -55,6 +50,10 @@ class MoveButton(Button):
     
     def onClick(self, screen):
         print(f"{screen.activePokemon.name} used {self.moveName}")
+        if screen.activeTrainer == screen.trainers[0]:
+            screen.activeTrainer = screen.trainers[1]
+        else:
+            screen.activeTrainer = screen.trainers[0]
 
 
 

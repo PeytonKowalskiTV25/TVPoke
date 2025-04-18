@@ -33,7 +33,7 @@ class Trainer:
             pokeY = 75
 
             pokemon = Image((pokeX, pokeY), 20, 20, pokeImg)
-            healthLabel = Label((25,15), 20, 10, f"{pokeName} hp: {pokeHealth}")
+            healthLabel = Label((25,75), 20, 10, f"{pokeName} hp: {pokeHealth}")
         
         elements.append(pokemon)
         elements.append(healthLabel)
