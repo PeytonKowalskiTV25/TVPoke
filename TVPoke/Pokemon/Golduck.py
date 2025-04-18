@@ -4,11 +4,18 @@ from TVPoke.BaseClasses.Move import Move
 class Golduck(Water):
     def __init__(self):
         moves = [
-            Move("Tackle", "NORMAL", 40),
-            Move("Water Gun", "WATER", 40),
-            Move("Surf", "WATER", 80),
-            Move("Splash", "WATER", 0)
+            Move("Hydro Pump", "WATER", 110, "Special"),
+            Move("Zen Headbutt", "PSYCHIC", 80, "Physical"),
+            Move("Ice Beam", "ICE", 90, "Special"),
+            Move("Surf", "WATER", 90, "Special")
         ]
-        super().__init__("Golduck", 80, moves, "./TVPoke/Pokemon/imgs/Golduck.png")
-        
-        
+        stats = {
+            "healthPoints": 80,
+            "attack": 82,
+            "defense": 78,
+            "specialAttack": 95,
+            "specialDefense": 80,
+            "speed": 85
+        }
+        super().__init__("Golduck", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Golduck.png", stats)
+

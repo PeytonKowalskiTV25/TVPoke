@@ -1,20 +1,14 @@
 class Pokemon:
-    def __init__(self, name, hp, type, critType, moves, imgPath):
+    def __init__(self, name, hp, type, critType, moves, imgPath, stats):
         self.name = name
         self.hp = hp
         self.type = type
         self.critType = critType
         self.moves = moves
         self.img = imgPath
+        self.stats = stats
 
-        self.stats = {
-        "healthPoints" : None,
-        "attack" : None,
-        "defense" : None,
-        "specialAttack" : None,
-        "specialDefense" : None,
-        "speed" : None
-        }
+        self.stats = stats
 
     def takeDamage(self, move, attacker):
         totalDamage = 0

@@ -4,10 +4,17 @@ from TVPoke.BaseClasses.Move import Move
 class Wigglytuff(Fairy):
     def __init__(self):
         moves = [
-            Move("Pound", "NORMAL", 40),
-            Move("Double Edge", "NORMAL", 120),
-            Move("Play Rough", "FAIRY", 90),
-            Move("Round", "NORMAL", 60)
-            
+            Move("Play Rough", "FAIRY", 90, "Physical"),
+            Move("Hyper Voice", "NORMAL", 90, "Special"),
+            Move("Dazzling Gleam", "FAIRY", 80, "Special"),
+            Move("Double-Edge", "NORMAL", 120, "Physical")
         ]
-        super().__init__("Wigglytuff", 140, moves, "./TVPoke/Pokemon/imgs/Wigglytuff.png")
+        stats = {
+            "healthPoints": 140,
+            "attack": 70,
+            "defense": 45,
+            "specialAttack": 85,
+            "specialDefense": 50,
+            "speed": 45
+        }
+        super().__init__("Wigglytuff", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Wigglytuff.png", stats)

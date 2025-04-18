@@ -1,12 +1,20 @@
-from TVPoke.BaseClasses.PokeTypes import *
+from TVPoke.BaseClasses.PokeTypes import Water
 from TVPoke.BaseClasses.Move import Move
 
 class Magikarp(Water):
     def __init__(self):
         moves = [
-            Move("Splash", "NORMAL", 0),
-            Move("Tackle", "NORMAL", 40),
-            Move("Hydro Pump", "WATER", 110),
-            Move("Bounce", "FLYING", 85)
+            Move("Splash", "NORMAL", 0, "Status"),
+            Move("Tackle", "NORMAL", 40, "Physical"),
+            Move("Flail", "NORMAL", 50, "Physical"),
+            Move("Bounce", "FLYING", 85, "Physical")
         ]
-        super().__init__("Magikarp", 20, moves, "./TVPoke/Pokemon/imgs/Magikarp.png")
+        stats = {
+            "healthPoints": 20,
+            "attack": 10,
+            "defense": 55,
+            "specialAttack": 15,
+            "specialDefense": 20,
+            "speed": 80
+        }
+        super().__init__("Magikarp", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Magikarp.png", stats)

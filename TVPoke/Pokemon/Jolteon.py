@@ -4,9 +4,17 @@ from TVPoke.BaseClasses.Move import Move
 class Jolteon(Electric):
     def __init__(self):
         moves = [
-            Move("Double Kick", "ELECTRIC", 40),
-            Move("ElectricGun", "ELECTRIC", 60),
-            Move("Flash Ray", "ELECTRIC", 70),
-            Move("Max Thunder Rumble", "ELECTRIC", 100)
+            Move("Thunderbolt", "ELECTRIC", 90, "Special"),
+            Move("Shadow Ball", "GHOST", 80, "Special"),
+            Move("Volt Switch", "ELECTRIC", 70, "Special"),
+            Move("Thunder Wave", "ELECTRIC", 0, "Status")
         ]
-        super().__init__("Jolteon", 160, moves, "./TVPoke/Pokemon/imgs/Jolteon.png")
+        stats = {
+            "healthPoints": 65,
+            "attack": 65,
+            "defense": 60,
+            "specialAttack": 110,
+            "specialDefense": 95,
+            "speed": 130
+        }
+        super().__init__("Jolteon", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Jolteon.png", stats)

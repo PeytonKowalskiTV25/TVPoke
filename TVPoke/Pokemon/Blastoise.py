@@ -4,9 +4,17 @@ from TVPoke.BaseClasses.Move import Move
 class Blastoise(Water):
     def __init__(self):
         moves = [
-            Move("Body Slam", "NORMAL", 40),
-            Move("Water Cannon", "WATER", 30),
-            Move("Power Wash", "WATER", 50),
-            Move("Quake", "ROCK", 20)
+            Move("Body Slam", "NORMAL", 40, "Physical"),
+            Move("Water Cannon", "WATER", 30, "Special"),
+            Move("Power Wash", "WATER", 50, "Special"),
+            Move("Quake", "ROCK", 20, "Physical")
         ]
-        super().__init__("Blastoise", 80, moves, "./TVPoke/Pokemon/imgs/Blastoise.png")
+        stats = {
+            "healthPoints": 79,
+            "attack": 83,
+            "defense": 100,
+            "specialAttack": 85,
+            "specialDefense": 105,
+            "speed": 78
+        }
+        super().__init__("Blastoise", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Blastoise.png", stats)

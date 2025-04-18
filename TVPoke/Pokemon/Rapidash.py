@@ -4,9 +4,17 @@ from TVPoke.BaseClasses.Move import Move
 class Rapidash(Fire):
     def __init__(self):
         moves = [
-            Move("Searing Flame", "FIRE", 20),
-            Move("Overrun", "FIRE", 30),
-            Move("Fire Mane", "FIRE", 90),
-            Move("Agility", "NORMAL", 0)
+            Move("Flare Blitz", "FIRE", 120, "Physical"),
+            Move("Stomp", "NORMAL", 65, "Physical"),
+            Move("Fire Spin", "FIRE", 35, "Special"),
+            Move("Agility", "PSYCHIC", 0, "Status")
         ]
-        super().__init__("Rapidash", 80, moves, "./TVPoke/Pokemon/imgs/Rapidash.png")
+        stats = {
+            "healthPoints": 65,
+            "attack": 100,
+            "defense": 70,
+            "specialAttack": 80,
+            "specialDefense": 80,
+            "speed": 105
+        }
+        super().__init__("Rapidash", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Rapidash.png", stats)

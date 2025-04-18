@@ -4,9 +4,17 @@ from TVPoke.BaseClasses.Move import Move
 class Dewgong(Water):
     def __init__(self):
         moves = [
-            Move("Ice Shard", "ICE", 80),
-            Move("Aurora", "WATER", 70),
-            Move("Cold Breath", "Ice", 10),
-            Move("Tail Whap", "WATER", 60)
+            Move("Ice Shard", "ICE", 40, "Physical"),
+            Move("Aurora Beam", "ICE", 65, "Special"),
+            Move("Surf", "WATER", 90, "Special"),
+            Move("Rest", "PSYCHIC", 0, "Status")
         ]
-        super().__init__("Dewgong", 100, moves, "./TVPoke/Pokemon/imgs/Dewgong.png")
+        stats = {
+            "healthPoints": 90,
+            "attack": 70,
+            "defense": 80,
+            "specialAttack": 70,
+            "specialDefense": 95,
+            "speed": 70
+        }
+        super().__init__("Dewgong", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Dewgong.png", stats)

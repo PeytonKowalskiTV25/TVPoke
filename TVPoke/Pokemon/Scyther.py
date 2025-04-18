@@ -4,9 +4,17 @@ from TVPoke.BaseClasses.Move import Move
 class Scyther(Bug):
     def __init__(self):
         moves = [
-            Move("X Scissor", "BUG", 80),
-            Move("Fury Cutter", "BUG", 40),
-            Move("Slash", "NORMAL", 70),
-            Move("Quick Attack", "NORMAL", 40)
+            Move("X-Scissor", "BUG", 80, "Physical"),
+            Move("Wing Attack", "FLYING", 60, "Physical"),
+            Move("Slash", "NORMAL", 70, "Physical"),
+            Move("Quick Attack", "NORMAL", 40, "Physical")
         ]
-        super().__init__("Scyther", 80, moves, "./TVPoke/Pokemon/imgs/Scyther.png")
+        stats = {
+            "healthPoints": 70,
+            "attack": 110,
+            "defense": 80,
+            "specialAttack": 55,
+            "specialDefense": 80,
+            "speed": 105
+        }
+        super().__init__("Scyther", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Scyther.png", stats)

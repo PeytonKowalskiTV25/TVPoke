@@ -32,25 +32,29 @@ class BattleScreen(Screen):
         else:
             self.activeTrainer = self.trainers[0]
         
-        activePokemon = self.activeTrainer.pokemon[0]
-        startX = 80
-        startY = 30
-
-        for index, move in enumerate(activePokemon.moves):
-            buttonX = startX
-            for index, move in enumerate(activePokemon.moves):
-                buttonY = startY
-                self.elements.append(MoveButton((buttonX, buttonY), move.name))
+        self.activePokemon = self.activeTrainer.pokemon[0]
+        
+        buttonWidth = 20
+        buttonHeight = 10
+        margin = 5
+        startX = 60
+        startY = 10
+    
+        for index, move in enumerate(self.activePokemon.moves):
+            row = index // 2
+            col = index % 2
+            buttonX = startX + col * (buttonWidth + margin)
+            buttonY = startY + row * (buttonHeight + margin)
+            self.elements.append(MoveButton((buttonX, buttonY), move))
 
 class MoveButton(Button):
-    def __init__(self, centerXY, moveName):
-        super().__init__(centerXY, 20, 10, moveName)
-        self.moveName = moveName
+    def __init__(self, centerXY, move):
+        super().__init__(centerXY, 20, 10, move.name)
+        self.moveName = move.name
+        self.move = move
     
     def onClick(self, screen):
-        for trainer in screen.trainers:
-            if trainer != screen.activeTrainer:
-                screen.activePokemon.takeDamage()
+        print(f"{screen.activePokemon.name} used {self.moveName}")
 
 
 

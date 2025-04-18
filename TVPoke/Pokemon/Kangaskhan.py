@@ -9,7 +9,7 @@ class Kangaskhan(Normal):
             Move("Crunch", "DARK", 80, "Physical"),
             Move("Power up Punch", "FIGHTING", 40, "Physical")
         ]
-        self.stats = {
+        stats = {
         "healthPoints" : 105,
         "attack" : 95,
         "defense" : 80,
@@ -17,14 +17,6 @@ class Kangaskhan(Normal):
         "specialDefense" : 80,
         "speed" :90
         }
-        self.statBuffs = {
-        "healthPoints" : 1,
-        "attack" : 1,
-        "defense" : 1,
-        "specialAttack" : 1,
-        "specialDefense" : 1,
-        "speed" : 1
-        }
-
-        super().__init__("Kangaskhan", self.stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Kangaskhan.png")
+        
+        super().__init__("Kangaskhan", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Kangaskhan.png", stats)
     

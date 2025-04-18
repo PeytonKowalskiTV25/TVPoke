@@ -4,9 +4,17 @@ from TVPoke.BaseClasses.Move import Move
 class Mew(Psychic):
     def __init__(self):
         moves = [
-            Move("Psyshock", "PSYCHIC", 60),
-            Move("Psychokinesis", "DARK", 40),
-            Move("Dark Pulse", "DARK", 80),
-            Move("Amnesia", "PSYCHIC", 0)
+            Move("Psychic", "PSYCHIC", 90, "Special"),
+            Move("Aura Sphere", "FIGHTING", 80, "Special"),
+            Move("Shadow Ball", "GHOST", 80, "Special"),
+            Move("Thunderbolt", "ELECTRIC", 90, "Special")
         ]
-        super().__init__("Mew", 100, moves, "./TVPoke/Pokemon/imgs/Mew.png")
+        stats = {
+            "healthPoints": 100,
+            "attack": 100,
+            "defense": 100,
+            "specialAttack": 100,
+            "specialDefense": 100,
+            "speed": 100
+        }
+        super().__init__("Mew", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Mew.png", stats)
