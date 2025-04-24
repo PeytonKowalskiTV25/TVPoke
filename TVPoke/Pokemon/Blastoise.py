@@ -17,4 +17,13 @@ class Blastoise(Water):
             "specialDefense": 105,
             "speed": 78
         }
-        super().__init__("Blastoise", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Blastoise.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        super().__init__("Blastoise", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Blastoise.png", stats, statBuffs)

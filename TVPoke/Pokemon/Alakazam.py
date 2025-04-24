@@ -17,4 +17,14 @@ class Alakazam(Psychic):
             "specialDefense": 95,
             "speed": 120
         }
-        super().__init__("Alakazam", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Alakazam.png", stats)
+
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Alakazam", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Alakazam.png", stats, statBuffs)

@@ -17,4 +17,14 @@ class Jolteon(Electric):
             "specialDefense": 95,
             "speed": 130
         }
-        super().__init__("Jolteon", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Jolteon.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Jolteon", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Jolteon.png", stats, statBuffs)

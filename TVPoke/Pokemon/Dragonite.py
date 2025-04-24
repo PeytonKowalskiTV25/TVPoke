@@ -17,4 +17,14 @@ class Dragonite(Dragon):
             "specialDefense": 100,
             "speed": 80
         }
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
         super().__init__("Dragonite", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Dragonite.png", stats)

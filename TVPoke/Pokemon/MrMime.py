@@ -17,4 +17,14 @@ class MrMime(Psychic):
             "specialDefense": 120,
             "speed": 90
         }
-        super().__init__("Mr. Mime", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/MrMime.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Mr. Mime", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/MrMime.png", stats, statBuffs)

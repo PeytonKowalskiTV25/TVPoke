@@ -17,4 +17,14 @@ class Vaporeon(Water):
             "specialDefense": 95,
             "speed": 65
         }
-        super().__init__("Vaporeon", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Vaporeon.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Vaporeon", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Vaporeon.png", stats, statBuffs)

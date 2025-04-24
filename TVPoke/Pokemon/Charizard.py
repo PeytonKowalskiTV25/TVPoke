@@ -17,4 +17,14 @@ class Charizard(Fire):
             "specialDefense": 85,
             "speed": 100
         }
-        super().__init__("Charizard", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Charizard.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Charizard", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Charizard.png", stats, statBuffs)

@@ -17,4 +17,14 @@ class Scyther(Bug):
             "specialDefense": 80,
             "speed": 105
         }
-        super().__init__("Scyther", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Scyther.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Scyther", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Scyther.png", stats, statBuffs)

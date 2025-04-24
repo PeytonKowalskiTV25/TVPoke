@@ -17,5 +17,15 @@ class Golduck(Water):
             "specialDefense": 80,
             "speed": 85
         }
-        super().__init__("Golduck", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Golduck.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Golduck", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Golduck.png", stats, statBuffs)
 

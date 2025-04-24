@@ -17,4 +17,14 @@ class Dewgong(Water):
             "specialDefense": 95,
             "speed": 70
         }
-        super().__init__("Dewgong", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Dewgong.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Dewgong", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Dewgong.png", stats, statBuffs)

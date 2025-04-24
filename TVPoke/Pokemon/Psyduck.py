@@ -17,4 +17,14 @@ class Psyduck(Water):
             "specialDefense": 50,
             "speed": 55
         }
-        super().__init__("Psyduck", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Psyduck.png", stats)
+        
+        statBuffs = {
+            "healthPoints": 1,
+            "attack": 1,
+            "defense": 1,
+            "specialAttack": 1,
+            "specialDefense": 1,
+            "speed": 1
+            }
+        
+        super().__init__("Psyduck", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Psyduck.png", stats, statBuffs)
