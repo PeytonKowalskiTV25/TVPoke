@@ -12,11 +12,13 @@ class Trainer:
         self.name = ""
 
     def removeFaintedPokemon(self):
-        for poke in self.pokemon:
+        for poke in self.pokemon[:]:  # Iterate over a copy of the list
             if poke.hp <= 0:
+                print(f"{poke.name} has fainted!")
                 self.pokemon.remove(poke)
 
     def getElements(self):
+        self.removeFaintedPokemon()  # Ensure fainted Pokémon are removed
         elements = []
         if len(self.pokemon) > 0:
             pokeHealth = self.pokemon[0].hp

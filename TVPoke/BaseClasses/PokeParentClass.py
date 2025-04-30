@@ -26,34 +26,30 @@ class Pokemon:
 
     def resolveConfusion(self):
         if self.confusion["isConfused"]:
-            # 50% chance to hurt itself
             if random.random() < 0.5:
                 print(f"{self.name} hurt itself in confusion!")
-                # Calculate self-damage as if using a 40-power physical move
                 attack = self.stats["attack"] * self.statBuffs["attack"]
-                defense = self.stats["defense"] * self.statBuffs["defense"]
+                defense = max(self.stats["defense"] * stage_to_multiplier(self.statBuffs["defense"]), 1)  # Ensure defense is at least 1
                 damage = ((0.5 * 40 * (attack / defense)) + 1)
                 self.hp -= damage
                 print(f"{self.name} took {damage:.1f} damage!")
             else:
                 print(f"{self.name} snapped out of confusion and attacked successfully!")
+                self.confusion["turnsLeft"] -= 1  # Decrement only if no self-damage
 
-            # Decrease confusion duration
-            self.confusion["turnsLeft"] -= 1
             if self.confusion["turnsLeft"] <= 0:
                 self.confusion["isConfused"] = False
                 print(f"{self.name} is no longer confused!")
 
     def inflictBurn(self):
-        self.burn["isBurned"] = True
-        self.burn["turnsLeft"] = random.randint(3, 5)  # Burn lasts 3-5 turns
-        print(f"{self.name} is burned!")
+        if not self.burn["isBurned"]:  # Prevent duplicate burns
+            self.burn["isBurned"] = True
+            self.burn["turnsLeft"] = random.randint(3, 5)
+            self.statBuffs["attack"] *= 0.5  # Apply attack reduction once
+            print(f"{self.name} is burned!")
 
     def resolveBurn(self):
         if self.burn["isBurned"]:
-            # Reduce attack stat by 50% (multiplier = 0.5)
-            self.statBuffs["attack"] *= 0.5
-
             # Take burn damage (1/16th of max HP)
             burnDamage = self.stats["healthPoints"] // 16
             self.hp -= burnDamage
@@ -70,15 +66,26 @@ class Pokemon:
         multi = 1
         if move.type == self.critType:
             multi = 2
-        
-        if move.damageCategory == "physical":
-            attack = attacker.stats["attack"] * attacker.statBuffs["attack"]
-            defense = self.stats["defense"] * self.statBuffs["defense"]
-        else:
-            attack = attacker.stats["specialAttack"] * attacker.statBuffs["specialAttack"]
-            defense = self.stats["specialDefense"] * self.statBuffs["specialDefense"]
 
-        totalDamage = ((0.5 * move.power * ((attack)/(defense))) + 1) * multi
+        if move.damageCategory == "Physical":
+            attack = attacker.stats["attack"] * stage_to_multiplier(attacker.statBuffs["attack"])
+            defense = self.stats["defense"] * stage_to_multiplier(self.statBuffs["defense"])
+            print(self.stats["attack"])
+            print(stage_to_multiplier(attacker.statBuffs["attack"]))
+            totalDamage = round(((0.5 * move.power * (attack / defense)) + 1) * multi)
+            print(f"0.5 * {move.power} * ({attack} / {defense})) + 1) * {multi})")
+        else:
+            attack = attacker.stats["specialAttack"] * stage_to_multiplier(attacker.statBuffs["specialAttack"])
+            defense = self.stats["specialDefense"] * stage_to_multiplier(self.statBuffs["specialDefense"])
+            totalDamage = round(((0.5 * move.power * (attack / defense)) + 1) * multi)
+            print(f"0.5 * {move.power} * ({attack} / {defense})) + 1) * {multi})")
 
         self.hp -= totalDamage
-    
+        print(f"{self.name} took {totalDamage} damage")
+        print(f"attack:{attack}; defense:{defense}")
+
+def stage_to_multiplier(stage):
+    if stage >= 0:
+        return (2 + stage) / 2  # Positive stages: 1.5x for +1, 2.0x for +2, etc.
+    else:
+        return 2 / (2 - stage)  # Negative stages: 0.67x for -1, 0.5x for -2, etc.

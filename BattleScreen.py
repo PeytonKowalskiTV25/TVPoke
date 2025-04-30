@@ -95,6 +95,10 @@ class MoveButton(Button):
                             activePokemon.statBuffs[stat] += float(statModifier)
                     else:  # Handle other stat modifiers
                         activePokemon.statBuffs[affectedStat] += float(statModifier)
+        elif self.move.name == "Power up Punch":
+            targetPokemon.takeDamage(self.move, activePokemon)
+            activePokemon.statBuffs["attack"] += 1  # Increment attack stage
+            print(f"{activePokemon.name}'s attack stage: {activePokemon.statBuffs['attack']}")
         else:
             targetPokemon.takeDamage(self.move, activePokemon)
 
@@ -109,4 +113,3 @@ class MoveButton(Button):
                 trainer.position = 1
             else:
                 trainer.position = 2
-

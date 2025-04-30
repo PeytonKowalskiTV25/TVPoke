@@ -7,12 +7,12 @@ effectMoveList = [
     {
         "name": "Dragon Dance",
         "affectedStat": ["attack", "speed"],
-        "statModifier": "+0.5"
+        "statModifier": "+1.0"
     },
     {
         "name": "Will-O-Wisp",
         "affectedStat": "attack",
-        "statModifier": "-0.5 (burn effect)"
+        "statModifier": "-1.0 (burn effect)"
     },
     {
         "name": "Barrier",

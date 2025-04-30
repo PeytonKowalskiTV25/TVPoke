@@ -25,6 +25,6 @@ class Gengar(Ghost):
             "specialAttack": 1,
             "specialDefense": 1,
             "speed": 1
-            }
+        }
         
         super().__init__("Gengar", stats["healthPoints"], moves, "./TVPoke/Pokemon/imgs/Gengar.png", stats, statBuffs)

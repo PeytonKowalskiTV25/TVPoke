@@ -22,6 +22,10 @@ while True: ##Game loop
         battleScreen.addTrainers(pokemonList1, pokemonList2)
         selectScreen.state["goTo"] = ""
         screen = battleScreen
+        for trainer in battleScreen.trainers:
+            if len(trainer.pokemon) <= 0:
+                print("wow you won. congrats. I don't wanna make a win screen")
+                screen = selectScreen
 
 
 
